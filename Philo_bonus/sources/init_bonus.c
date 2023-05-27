@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:02:47 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/05/27 14:18:17 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:21:15 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ int	ft_philo_init(t_diner *diner, char **argv, int argc)
 	diner->ms_eat = ft_atoi_philo(argv[3]);
 	diner->ms_sleep = ft_atoi_philo(argv[4]);
 	diner->ms_think = diner->ms_eat;
+	if (diner->nb_of_philo % 2 == 0)
+		diner->ms_think = 1;
 	diner->dead_philos = 0;
 	diner->start = ft_time() + 1000;
 	diner->meals_needed = -1;
