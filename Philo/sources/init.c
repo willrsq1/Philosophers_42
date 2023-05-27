@@ -6,7 +6,7 @@
 /*   By: wruet-su <william.ruetsuquet@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 21:02:47 by wruet-su          #+#    #+#             */
-/*   Updated: 2023/04/10 20:40:29 by wruet-su         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:17:19 by wruet-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int	ft_philo_init(t_diner *diner, char **argv, int argc)
 			printf("Time = %ldms. Philosopher 1 is dead\n", diner->ms_die), 3);
 	diner->ms_eat = ft_atoi_philo(argv[3]);
 	diner->ms_sleep = ft_atoi_philo(argv[4]);
-	diner->ms_think = (diner->ms_die - diner->ms_sleep - diner->ms_eat) * 0.7;
-	if (diner->nb_of_philo % 2 == 0)
-		diner->ms_think = (diner->ms_eat - diner->ms_sleep) / 2;
+	diner->ms_think = diner->ms_eat;
 	diner->meals_needed = -1;
 	if (argc == 6)
 		diner->meals_needed = ft_atoi_philo(argv[5]);
